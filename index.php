@@ -6,22 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="get">
-        <label>Quantity: </label><br>
-        <input type="text" name="quantity"><br>
-        <input type="submit" value="total">
+    <form action="index.php" method="post">
+        <label>Enter a number to count to:</label>
+        <input type="text" name="counter">
+        <input type="submit" value="start">
     </form>
 </body>
 </html>
 <?php
-   
-    $item = "pizza";
-    $price = 5.99;
-    $quantity = $_GET["quantity"];
-    $total = null;
-    $total = $quantity * $price;
 
-    echo "You have ordered {$quantity} x {$item}/s <br>";
-    echo "Your total is: \${$total}";
+    $counter = $_POST["counter"];
+
+    for($i = 1; $i <= $counter; $i++){
+        echo $i . "<br>";
+    }
+
 
 ?>
